@@ -1,0 +1,103 @@
+% LaTeX resume using res.cls
+\documentclass[a4]{article}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\setlength{\textwidth}{5.1in} % set width of text portion
+\usepackage{hyperref}
+\usepackage{datenumber}
+\usepackage{spreadtab}
+\usepackage{titling}
+
+%set start date for this weekly report here
+\setdate{2015}{3}{30}%
+
+\author{Your name}
+
+%to get plain text output run:
+%pdf2ps wl-2015-3-30.pdf 
+%ps2ascii wl-2015-3-30.ps
+%assuming file saved as wl-2015-3-30.tex
+
+\begin{document}
+	
+	\section*{SUBJECT}
+	[Reports] \theauthor's report for \datedate - {\addtocounter{datenumber}{7}\setdatebynumber{\thedatenumber}\datedate\addtocounter{datenumber}{-7}\setdatebynumber{\thedatenumber}}
+	
+	\section*{FORMAT}
+	To get plain text output run:\\
+	pdf2ps wl-\thedateyear-\thedatemonth-\thedateday.pdf\\
+	ps2ascii wl-\thedateyear-\thedatemonth-\thedateday.ps
+	
+	\section*{HOURS WORKED}
+	
+		\begin{spreadtab}{{tabular}{lll}}
+			%add your comments in third column here starting from @
+			@\datedate & 8.0&\\ 
+			\addtocounter{datenumber}{1}%
+			\setdatebynumber{\thedatenumber}%
+			@\datedate & 8.0&\\
+			\addtocounter{datenumber}{1}%
+			\setdatebynumber{\thedatenumber}%
+			@\datedate & 8.0&\\
+			\addtocounter{datenumber}{1}%
+			\setdatebynumber{\thedatenumber}%
+			@\datedate & 8.0&\\
+			\addtocounter{datenumber}{1}%
+			\setdatebynumber{\thedatenumber}%
+			@\datedate & 8.0&\\
+			\addtocounter{datenumber}{1}%
+			\setdatebynumber{\thedatenumber}%
+			@\datedate & 0.0&\\
+			\addtocounter{datenumber}{1}%
+			\setdatebynumber{\thedatenumber}%
+			@\datedate & 0.0&\\
+			@\hline
+			@Hours Worked & sum(b1:b7) &
+		\end{spreadtab}
+	
+	%put Eventum report here
+	\section*{EVENTUM REPORT}
+	\begin{verbatim}
+	
+	\end{verbatim}
+	
+	\section*{BUGS PROCEED}
+	\begin{itemize}
+		\item
+	\end{itemize}
+	
+	\section*{KEY ACCOMPLISHMENTS}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	\section*{KEY GOOD VIBRATIONS}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	\section*{KEY CONCERNS}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	\section*{WAITING FOR...}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	\section*{KEY TASKS THAT STALLED}
+	\begin{itemize}
+		\item
+	\end{itemize}
+	
+	\section*{MY TO DO}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	\par\noindent
+	Best regards,\\
+	Sveta.
+	
+\end{document}
