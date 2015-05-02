@@ -1,0 +1,49 @@
+%bug in geometry if used with beamer
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[notes]{beamer}
+%\documentclass[notes=only]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{plmce}
+\title[Percona Live Template HD]{Percona Live Template HD}
+\subtitle{Customized with Live colors}
+\author{Speaker Name}
+\date{April, 13, 2015}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\note{some note}
+	
+	
+	\begin{frame}{Sample Text Page}
+		\begin{itemize} 
+			\item Sample text here
+			\begin{itemize}
+				\item Sublevel 1
+				\item Sublevel 2
+				\item Sublevel 3
+			\end{itemize}
+			\item More main text
+			\item \alert{Highlighted item}
+		\end{itemize}
+	\end{frame}
+	
+	
+	\begin{frame}{Sample Text Page}
+		\begin{vfilleditems}
+			\item Sample text here
+			\begin{itemize}
+				\item Sublevel 1
+				\item Sublevel 2
+				\item Sublevel 3
+			\end{itemize}
+			\item More main text
+			\item \alert{Highlighted item}
+		\end{vfilleditems}
+	\end{frame}
+	
+\end{document}

@@ -1,0 +1,31 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plmce}[1][]
+{
+	\ifnum\c@framenumber=1%
+	{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{percona_logo.jpeg}}
+	\else%
+	{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{percona_background.jpeg}}
+	\fi%	
+}
+
+\defbeamertemplate*{frametitle}{plmce}[1][] {
+	\begin{textblock*}{\paperwidth}(0.37in,0.36in)
+		\begin{beamercolorbox}{frametitle}
+			\usebeamerfont{frametitle}\insertframetitle%
+		\end{beamercolorbox}%
+	\end{textblock*}
+	
+	\begin{textblock*}{\paperwidth}(6.15in,0.55in)
+		\begin{beamercolorbox}{framenumber}
+			\usebeamerfont{framenumber}\insertframenumber%
+		\end{beamercolorbox}%
+	\end{textblock*}
+	
+	\vskip0.3in%
+}
+
+
+\mode<all>

@@ -1,0 +1,47 @@
+\mode<presentation>
+
+%\setbeamertemplate{frametitle}
+%{\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);}
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+
+\setbeamertemplate{title page}{default}{}
+
+% Itemize items, plmce
+
+\setbeamertemplate{itemize item}{\raise0.5pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\raise0.5pt\hbox{--}}
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title page
+\defbeamertemplate*{title page}{plmce}[1][]
+{ 	
+	\begin{textblock*}{\paperwidth}(0.44in,0.45in)
+		\begin{beamercolorbox}{title page header}
+			\usebeamerfont{title}\inserttitle%
+		\end{beamercolorbox}%
+	\end{textblock*}
+	
+	\ifx\insertsubtitle\@empty%
+	\else%
+	\begin{textblock*}{\paperwidth}(0.44in,0.83in)
+		\begin{beamercolorbox}{subtitle}
+			\usebeamerfont{subtitle}\insertsubtitle%
+		\end{beamercolorbox}%
+	\end{textblock*}
+	\fi%  
+	
+	\begin{textblock*}{\paperwidth}(0.41in,3.02in)
+		\begin{beamercolorbox}{author}
+			\usebeamerfont{author}\insertauthor\par%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}{date}
+			\usebeamerfont{date}\insertdate\par%
+		\end{beamercolorbox}%
+	\end{textblock*}
+}
+
+
+\mode<all>
