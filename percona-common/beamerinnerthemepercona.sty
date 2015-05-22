@@ -1,0 +1,59 @@
+\mode<presentation>
+
+%\setbeamertemplate{frametitle}
+%{\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);}
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+
+\setbeamertemplate{title page}{default}{}
+
+% Itemize items, plmce
+\setbeamertemplate{items}[circle]
+
+%\setbeamertemplate{itemize item}[circle]
+%\setbeamertemplate{itemize subitem}[circle]
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title page
+\defbeamertemplate*{title page}{plmce}[1][]
+{ 	
+	\begin{textblock*}{\paperwidth}(0.44in,0.45in)
+		\begin{beamercolorbox}{title page header}
+			\usebeamerfont{title}\inserttitle%
+		\end{beamercolorbox}%
+	\end{textblock*}
+	
+	\ifx\insertsubtitle\@empty%
+	\else%
+	\begin{textblock*}{\paperwidth}(0.44in,0.83in)
+		\begin{beamercolorbox}{subtitle}
+			\usebeamerfont{subtitle}\insertsubtitle%
+		\end{beamercolorbox}%
+	\end{textblock*}
+	\fi%  
+	
+	\begin{textblock*}{\paperwidth}(0.41in,3.02in)
+		\begin{beamercolorbox}{author}
+			\usebeamerfont{author}\insertauthor\par%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}{date}
+			\usebeamerfont{date}\insertdate\par%
+		\end{beamercolorbox}%
+	\end{textblock*}
+}
+
+%change fram style
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+	\beamer@frametopskip=-1cm plus 1fill\relax%
+	\beamer@framebottomskip=0.5cm plus 1.5fill\relax%
+	\beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
+	\beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+	\def\beamer@initfirstlineunskip{}%
+}
+
+
+
+\mode<all>

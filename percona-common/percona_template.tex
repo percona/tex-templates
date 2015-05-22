@@ -1,0 +1,85 @@
+%bug in geometry if used with beamer
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass{beamer}
+%\documentclass[notes]{beamer}
+%\documentclass[notes=only]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{percona}
+\title[Percona Common Template]{Percona Common Template}
+\subtitle{Customized with Live colors}
+\author{Speaker Name}
+\date{April, 13, 2015}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\note{some note}
+	
+	
+	\begin{frame}{HEADER}
+		\begin{itemize} 
+			\item Sample text here
+			\begin{itemize}
+				\item Sublevel 1
+				\item Sublevel 2
+				\item Sublevel 3
+				
+				\begin{itemize}
+					\item Sublevel 1
+					\item Sublevel 2
+					\item Sublevel 3
+				\end{itemize}
+			\end{itemize}
+			\item More main text
+			\item \alert{Highlighted item}
+		\end{itemize}
+	\end{frame}
+	
+	
+	
+	\begin{frame}{HEADER}
+		\begin{itemize} 
+			\item Sample text here
+			\begin{itemize}
+				\item Sublevel 1
+				\item Sublevel 2
+				\item Sublevel 3
+			\end{itemize}
+			\item More main text
+			\item \alert{Highlighted item}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{HEADER}
+		\begin{vfilleditems}
+			\item Sample text here
+			\begin{itemize}
+				\item Sublevel 1
+				\item Sublevel 2
+				\item Sublevel 3
+			\end{itemize}
+			\item More main text
+			\item \alert{Highlighted item}
+		\end{vfilleditems}
+	\end{frame}
+		
+	\begin{frame}{HEADER}
+		\begin{vfilleditems}
+			\item Sample text here
+			\begin{itemize}
+				\item Sublevel 1
+				\item Sublevel 2
+				\item Sublevel 3
+			\end{itemize}
+			\item More main text
+			\item More main text
+			\item More main text
+			\item More main text
+			\item \alert{Highlighted item}
+		\end{vfilleditems}
+	\end{frame}
+	
+\end{document}

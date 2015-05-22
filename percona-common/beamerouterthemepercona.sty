@@ -1,0 +1,47 @@
+\mode<presentation>
+
+
+% Frame title
+
+\defbeamertemplate*{frametitle}{percona}[1][] {
+	    \begin{beamercolorbox}[wd=\paperwidth,colsep=1.0pt]{upper separation line head}
+	    \end{beamercolorbox}
+	    \begin{beamercolorbox}[wd=\paperwidth,%
+	    	plus1fil,center]{title in head/foot}
+	    	\usebeamerfont{title in head/foot}\insertframetitle
+	    \end{beamercolorbox}
+	    \begin{beamercolorbox}[wd=\paperwidth,colsep=1.5pt]{upper separation line head}
+	    \end{beamercolorbox}
+	    
+	    \tikz[remember picture,overlay] {%
+	    	\draw[perconabordo,line width=0.064cm] ([yshift=-1.9cm]current page.north west)
+	    	-- ([yshift=-1.9cm,xshift=\paperwidth]current page.north west);}
+}
+
+\defbeamertemplate*{footline}{percona}[1][] {
+	\ifnum \insertpagenumber=1
+	\else
+	\tikz[remember picture,overlay] {%
+		\draw[perconayellow,line width=0.064cm] ([yshift=-8.92cm]current page.north west)
+		-- ([yshift=-8.92cm,xshift=\paperwidth]current page.north west);
+		\draw[fill=perconared1,perconared1] (0,0) rectangle (\paperwidth,0.64cm);
+		\draw[fill=perconared2,perconared2] (-1,0) -- (-1,0.64cm) -- (8.45cm,0.64cm) -- (8.8cm,0);
+		\draw[fill=perconared3,perconared3] (-2,0) -- (-2,0.64cm) -- (8.26cm,0.64cm) -- (8.52cm,0);
+		}
+	    \begin{textblock*}{\paperwidth}(0.28cm,9.2cm)
+	    	\begin{beamercolorbox}{framenumber}
+	    		\usebeamerfont{framenumber}\insertframenumber%
+	    	\end{beamercolorbox}%
+	    \end{textblock*}
+	    \begin{textblock*}{\paperwidth}(9.75cm,9.25cm)
+	    	\begin{beamercolorbox}{framenumber}
+	    		%\urlstyle{framenumber}
+	    		\usebeamerfont{framenumber}www.percona.com
+	    		%\url{www.percona.com}
+	    	\end{beamercolorbox}%
+	    \end{textblock*}
+	\fi
+}
+
+
+\mode<all>
