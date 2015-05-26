@@ -22,12 +22,12 @@
 	\ifnum \insertpagenumber=1
 	\else
 	\tikz[remember picture,overlay] {%
-		\draw[perconayellow,line width=0.064cm] ([yshift=-8.92cm]current page.north west)
-		-- ([yshift=-8.92cm,xshift=\paperwidth]current page.north west);
+		\draw[perconayellow,line width=0.064cm] (0,0.68cm) -- (\paperwidth,0.68cm);
 		\draw[fill=perconared1,perconared1] (0,0) rectangle (\paperwidth,0.64cm);
 		\draw[fill=perconared2,perconared2] (-1,0) -- (-1,0.64cm) -- (8.45cm,0.64cm) -- (8.8cm,0);
 		\draw[fill=perconared3,perconared3] (-2,0) -- (-2,0.64cm) -- (8.26cm,0.64cm) -- (8.52cm,0);
 		}
+		%\draw[perconayellow,line width=0.064cm] ([yshift=-8.92cm]current page.north west) -- ([yshift=-8.92cm,xshift=\paperwidth]current page.south west);
 	    \begin{textblock*}{\paperwidth}(0.28cm,9.2cm)
 	    	\begin{beamercolorbox}{framenumber}
 	    		\usebeamerfont{framenumber}\insertframenumber%

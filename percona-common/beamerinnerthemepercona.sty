@@ -7,7 +7,7 @@
 
 \setbeamertemplate{title page}{default}{}
 
-% Itemize items, plmce
+% Itemize items, percona
 \setbeamertemplate{items}[circle]
 
 %\setbeamertemplate{itemize item}[circle]
@@ -17,29 +17,40 @@
 \setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
 
 % Title page
-\defbeamertemplate*{title page}{plmce}[1][]
+\defbeamertemplate*{title page}{percona}[1][]
 { 	
-	\begin{textblock*}{\paperwidth}(0.44in,0.45in)
+	\tikz[remember picture,overlay] {%
+		\tikzset{shift={(current page.north west)}}
+		\draw[fill=perconared1,perconared1] (0,0) rectangle (\paperwidth,-\paperheight);
+		\path[fill=perconared2] (0.86,0.1) .. controls (2.6,-4.92) and (5.5,-4.34) .. (7.82,-7.53) .. controls (8.67,-8.69) and (8.7,-9.59) .. (8.7,-9.59) -- (-0.1,-9.59) -- (-0.1,0.1) -- (0.86,0.1) -- cycle(-0.1,0.1) -- (-0.1,0.1) -- cycle(8.7,-9.59) -- (8.7,-9.59) -- cycle;
+		\path[draw=perconared3,fill=perconared3,draw opacity=0.600,fill opacity=0.600] (0.87,0.1) .. controls (2.03,-4.05) and (4.06,-4.63) .. (5.8,-7.24) .. controls (6.6,-8.44) and (6.68,-9.59) .. (6.68,-9.59) -- (0,-9.59) -- (0,0.1) -- (0.87,0.1) -- cycle(0,0.1) -- (0,0.1) -- cycle(6.68,-9.59) -- (6.68,-9.59) -- cycle;
+		\draw[fill=white,white,rounded corners=3pt] (0,-1.46) rectangle (\paperwidth,-3.24);
+		\path[fill=perconared4] (0,-3.25) -- (0,-1.45) -- (1.51,-1.45) .. controls (1.86,-2.18) and (2.27,-2.74) .. (2.775,-3.25) -- (0,-3.25) -- cycle(0,-1.45) -- (0,-1.45) -- cycle(2.775,-3.25) -- (2.775,-3.25) -- cycle;
+		\path[fill=perconared5] (0,-3.25) -- (0,-1.45) -- (1.4,-1.45) .. controls (1.7,-2.14) and (2,-2.7) .. (2.4,-3.25) -- (0,-3.25) -- cycle(0,-1.45) -- (0,-1.48) -- cycle (2.4,-3.25) -- (2.4,-3.25) -- cycle;
+		\node at (9.3,-2.35)  {\includegraphics[width=5.62cm]{logo.png}};
+	}
+	
+	\begin{textblock*}{11.52cm}(0.68cm,3.85cm)
+		\ifx\insertsubtitle\@empty%
 		\begin{beamercolorbox}{title page header}
-			\usebeamerfont{title}\inserttitle%
+			\hfill\usebeamerfont{title}\inserttitle%
 		\end{beamercolorbox}%
+		\else%
+			\begin{beamercolorbox}{subtitle}
+				\linespread{1.1}
+				\hfill\usebeamerfont{title}\inserttitle\par%
+				\hfill\usebeamerfont{subtitle}\insertsubtitle%
+			\end{beamercolorbox}%
+		\fi% 
 	\end{textblock*}
+
 	
-	\ifx\insertsubtitle\@empty%
-	\else%
-	\begin{textblock*}{\paperwidth}(0.44in,0.83in)
-		\begin{beamercolorbox}{subtitle}
-			\usebeamerfont{subtitle}\insertsubtitle%
-		\end{beamercolorbox}%
-	\end{textblock*}
-	\fi%  
-	
-	\begin{textblock*}{\paperwidth}(0.41in,3.02in)
+	\begin{textblock*}{7.26cm}(5.03cm,5.36cm)
 		\begin{beamercolorbox}{author}
-			\usebeamerfont{author}\insertauthor\par%
-		\end{beamercolorbox}%
-		\begin{beamercolorbox}{date}
-			\usebeamerfont{date}\insertdate\par%
+			\linespread{1.1}
+			\hfill\usebeamerfont{author}\insertauthor\par%
+			\hfill\usebeamerfont{author}\insertinstitute\par%
+			\hfill\usebeamerfont{author}\insertdate\par%
 		\end{beamercolorbox}%
 	\end{textblock*}
 }
