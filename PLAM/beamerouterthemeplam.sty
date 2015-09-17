@@ -1,0 +1,47 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plam}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        \hspace{10.3cm}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{image7.jpg}}
+        \else
+	        %TODO: move to footline
+	        \hspace{0.835\paperwidth}
+	        \rule{0in}{8.65cm}
+	        {\includegraphics[width=0.1\paperwidth,keepaspectratio]{image6.png}}
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{plam}[1][] {
+        \begin{textblock*}{\paperwidth}(0.08\paperwidth,0.08\paperheight)
+                \begin{beamercolorbox}{frametitle}
+                        \usebeamerfont{frametitle}\insertframetitle%
+                \end{beamercolorbox}%
+        \end{textblock*}
+        
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+        	\tikz[remember picture,overlay] {%
+        		\draw[plamtitlepagegreen,line width=0.05cm] (0,-0.21\paperheight) -- (\paperwidth,-0.21\paperheight);
+        	}
+        \end{textblock*}
+}
+
+\defbeamertemplate*{footline}{plam}[1][] {
+	
+	\ifnum \insertpagenumber=1
+	\else
+	    \begin{textblock*}{\paperwidth}(0.97\paperwidth,0.92\paperheight)
+	            \begin{beamercolorbox}{framenumber}
+	                    \usebeamerfont{framenumber}\insertframenumber%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	
+	    \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>

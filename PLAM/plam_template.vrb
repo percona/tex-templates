@@ -1,0 +1,13 @@
+\frametitle{Code example}
+\begin{semiverbatim}
+mysql> SELECT query, total_latency, no_index_used_count, rows_sent, rows_examined
+    -> FROM sys.statements_with_full_table_scans
+    -> WHERE db='employees' AND query NOT LIKE '\%performance_schema\%'\\G
+********************** 1. row **********************
+              query: SELECT COUNT ( `emp_no` ) FROM ...  `emp_no` ) WHERE `title` = ?
+      total_latency: 805.37 ms
+no_index_used_count: 1
+          rows_sent: 1
+      rows_examined: 397774
+...
+\end{semiverbatim}

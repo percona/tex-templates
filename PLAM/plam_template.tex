@@ -1,0 +1,88 @@
+%bug in geometry if used with beamer
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[notes]{beamer}
+%\documentclass[notes=only]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{plam}
+\title[Percona Live Template HD]{Percona Live 2015}
+\subtitle{Customized with Live colors}
+\author{Speaker Name}
+\date{September 21-23, 2015 Mövenpick Hotel  Amsterdam}
+
+\begin{document}
+
+        \begin{frame}
+                \titlepage
+        \end{frame}
+
+        \note{some note}
+
+
+        \begin{frame}{Sample Text Page}
+                \begin{itemize}
+                        \item Sample text here
+                        \begin{itemize}
+                                \item Sublevel 1
+                                \begin{itemize}
+                                	\item Sub-sublevel 1
+                                	\item Sub-sublevel 2
+                                \end{itemize}
+                                \item Sublevel 2
+                                \item Sublevel 3
+                        \end{itemize}
+                        \item More main text
+                        \item \alert{Highlighted item}
+                \end{itemize}
+        \end{frame}
+		
+		\begin{frame}[fragile]{Code example}
+			\begin{semiverbatim}
+				mysql> SELECT query, total_latency, no_index_used_count, rows_sent, rows_examined
+				    -> FROM sys.statements_with_full_table_scans 
+				    -> WHERE db='employees' AND query NOT LIKE '\%performance_schema\%'\\G
+				********************** 1. row **********************
+				              query: SELECT COUNT ( `emp_no` ) FROM ...  `emp_no` ) WHERE `title` = ?
+				      total_latency: 805.37 ms
+				no_index_used_count: 1
+				          rows_sent: 1
+				      rows_examined: 397774
+				...
+			\end{semiverbatim}
+		\end{frame}
+		
+        \begin{frame}{Sample Text Page}
+            \begin{vfilleditems}
+                \item Sample text here
+                \begin{itemize}
+                    \item Sublevel 1
+                    \begin{itemize}
+                             	\item Sub-sublevel 1
+                             	\item Sub-sublevel 2
+                    \end{itemize}
+                    \item Sublevel 2
+                    \item Sublevel 3
+                \end{itemize}
+                \item More main text
+                \item \alert{Highlighted item}
+            \end{vfilleditems}
+        \end{frame}
+        
+        \begin{frame}{Sample Text Page}
+        	\begin{vfilleditems}
+        		\item Sample text here
+        		\begin{itemize}
+        			\item Sublevel 1
+        			\begin{itemize}
+        				\item Sub-sublevel 1
+        				\item Sub-sublevel 2
+        			\end{itemize}
+        			\item Sublevel 2
+        			\item Sublevel 3
+        		\end{itemize}
+        		\item More main text
+        		\item \alert{Highlighted item}
+        	\end{vfilleditems}
+        \end{frame}
+        
+\end{document}               
