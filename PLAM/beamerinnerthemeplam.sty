@@ -42,11 +42,19 @@
 		{\includegraphics[height=0.015\paperheight,keepaspectratio]{image4.png}}
 	\end{textblock*}
 
-    \begin{textblock*}{0.55\paperwidth}(0.11\paperwidth,0.39\paperheight)
-            \begin{beamercolorbox}{title page header}
-                    \usebeamerfont{title}\inserttitle%
-            \end{beamercolorbox}%
-    \end{textblock*}
+	\ifx\insertsubtitle\@empty%
+	    \begin{textblock*}{0.55\paperwidth}(0.11\paperwidth,0.39\paperheight)
+	            \begin{beamercolorbox}{title page header}
+	                    \usebeamerfont{title}\inserttitle%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	\else
+		\begin{textblock*}{0.62\paperwidth}(0.06\paperwidth,0.35\paperheight)
+			\begin{beamercolorbox}{title page header}
+				\usebeamerfont{title}\inserttitle\\\usebeamerfont{subtitle}\insertsubtitle%
+			\end{beamercolorbox}%
+		\end{textblock*}
+	\fi
 
     \begin{textblock*}{0.62\paperwidth}(0.06\paperwidth,0.59\paperheight)
     	\begin{beamercolorbox}{date}
