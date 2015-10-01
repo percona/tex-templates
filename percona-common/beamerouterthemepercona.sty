@@ -14,8 +14,8 @@
 	    \end{beamercolorbox}
 	    
 	    \tikz[remember picture,overlay] {%
-	    	\draw[perconabordo,line width=0.064cm] ([yshift=-1.9cm]current page.north west)
-	    	-- ([yshift=-1.9cm,xshift=\paperwidth]current page.north west);}
+	    	\draw[perconabordo,line width=0.064cm] ([yshift=-0.19\paperheight]current page.north west)
+	    	-- ([yshift=-0.19\paperheight,xshift=\paperwidth]current page.north west);}
 }
 
 \defbeamertemplate*{footline}{percona}[1][] {
@@ -28,12 +28,12 @@
 		\draw[fill=perconared3,perconared3] (-2,0) -- (-2,0.64cm) -- (8.26cm,0.64cm) -- (8.52cm,0);
 		}
 		%\draw[perconayellow,line width=0.064cm] ([yshift=-8.92cm]current page.north west) -- ([yshift=-8.92cm,xshift=\paperwidth]current page.south west);
-	    \begin{textblock*}{\paperwidth}(0.28cm,9.2cm)
+	    \begin{textblock*}{\paperwidth}(0.02\paperwidth,0.96\paperheight)
 	    	\begin{beamercolorbox}{framenumber}
 	    		\usebeamerfont{framenumber}\insertframenumber%
 	    	\end{beamercolorbox}%
 	    \end{textblock*}
-	    \begin{textblock*}{\paperwidth}(9.75cm,9.25cm)
+	    \begin{textblock*}{\paperwidth}(0.76\paperwidth,0.96\paperheight)
 	    	\begin{beamercolorbox}{framenumber}
 	    		%\urlstyle{framenumber}
 	    		\usebeamerfont{framenumber}www.percona.com
