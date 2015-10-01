@@ -60,22 +60,26 @@
 
 \defbeamertemplate*{section page}{percona}[1][]
 {
-	\begin{centering}
-		\begin{beamercolorbox}[sep=12pt,center,#1,rounded=true]{section}
-			\usebeamerfont{section title}\insertsection\par
-		\end{beamercolorbox}
-	\end{centering}
+	\begin{tikzpicture}[overlay, remember picture]
+		\node[anchor=center] at (current page.center) {
+			\begin{beamercolorbox}[sep=0.25\paperheight,center,#1,rounded=true]{section}
+				\usebeamerfont{section title}\insertsection\par
+			\end{beamercolorbox}
+		};
+	\end{tikzpicture}
 }
 
 % Subection page: default
 
 \defbeamertemplate*{subsection page}{percona}[1][]
 {
-	\begin{centering}
-		\begin{beamercolorbox}[sep=12pt,center,#1,rounded=true,rounded=true]{subsection}
-			\usebeamerfont{section title}\insertsubsection\par
-		\end{beamercolorbox}
-	\end{centering}
+	\begin{tikzpicture}[overlay, remember picture]
+		\node[anchor=center] at (current page.center) {
+			\begin{beamercolorbox}[sep=0.125\paperheight,center,#1,rounded=true]{subsection}
+				\usebeamerfont{subsection title}\insertsubsection\par
+			\end{beamercolorbox}
+		};
+	\end{tikzpicture}
 }
 
 %change frame style
