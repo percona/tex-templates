@@ -16,6 +16,9 @@
 \setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
 \setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
 
+\setbeamertemplate{section in toc}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{black}\textbullet}}\inserttocsection\par}
+
 % Title page
 \defbeamertemplate*{title page}{percona}[1][]
 { 	
@@ -53,6 +56,26 @@
 			\hfill\usebeamerfont{author}\insertdate\par%
 		\end{beamercolorbox}%
 	\end{textblock*}
+}
+
+\defbeamertemplate*{section page}{percona}[1][]
+{
+	\begin{centering}
+		\begin{beamercolorbox}[sep=12pt,center,#1,rounded=true]{section}
+			\usebeamerfont{section title}\insertsection\par
+		\end{beamercolorbox}
+	\end{centering}
+}
+
+% Subection page: default
+
+\defbeamertemplate*{subsection page}{percona}[1][]
+{
+	\begin{centering}
+		\begin{beamercolorbox}[sep=12pt,center,#1,rounded=true,rounded=true]{subsection}
+			\usebeamerfont{section title}\insertsubsection\par
+		\end{beamercolorbox}
+	\end{centering}
 }
 
 %change frame style

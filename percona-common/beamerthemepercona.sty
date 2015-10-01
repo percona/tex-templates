@@ -41,7 +41,9 @@
 %vfill items, thanks http://stackoverflow.com/a/3229655
 \newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
 
-
+\AtBeginSection{\frame{\sectionpage}}
+\AtBeginSubsection{\frame{\subsectionpage}}
+\AtBeginSubsubsection{\frame{\subsubsectionpage}}
 
 
 \mode<all>
