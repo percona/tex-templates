@@ -2,6 +2,7 @@
 Tex templates for presentation slides and more
 
 Requirements
+============
 
 1. LaTeX
 2. beamer
@@ -11,6 +12,7 @@ Requirements
 6. texlive-fonts-recommended
 
 Initial installation
+====================
 
 1. mkdir -p $HOME/texmf/tex/latex
 2. cd $HOME/texmf/tex/latex
@@ -19,5 +21,6 @@ Initial installation
 5. texhash
 
 Usage
+=====
 
 Open *template.tex file in TexStudio and click "Build & View" icno
