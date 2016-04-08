@@ -1,0 +1,49 @@
+%This is 16x9 template
+%You need to include it as
+%\documentclass[aspectratio=169,<options>]{beamer}
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{pgfplots}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usetikzlibrary{positioning,calc}
+
+\usepackage[absolute,overlay]{textpos}
+
+\graphicspath{{./plmce-2016_images/}}
+
+\setbeamersize{text margin left=18pt,mini frame offset=118cm}
+
+% Settings
+%use it for wide screens
+%\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter}
+
+\DeclareOptionBeamer{titlepage}{\PassOptionsToPackage{titlepage=#1}{beamertheme-inner}}
+\ProcessOptionsBeamer
+
+\usefonttheme{plmce-2016}
+\usecolortheme{plmce-2016}
+\useinnertheme{plmce-2016}
+%\useinnertheme{rounded}
+\useoutertheme{plmce-2016}
+
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{blocks}[rounded][shadow=fase]  
+
+
+
+%\RequirePackage{listings}
+
+%Custom commands
+%highlight item
+\renewcommand{\alert}[1]{\textbf{#1}}
+
+%vfill items, thanks http://stackoverflow.com/a/3229655
+\newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
+
+\mode<all>

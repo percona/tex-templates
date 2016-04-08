@@ -1,0 +1,47 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plmce-2016}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        \hspace{10.3cm}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{bubbles.jpg}}
+        \else
+	        %TODO: move to footline
+	        \hspace{0.754\paperwidth}
+	        \rule{0in}{8.75cm}
+	        {\includegraphics[width=0.21\paperwidth,keepaspectratio]{small_logo.png}}
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{plmce-2016}[1][] {
+        \begin{textblock*}{\paperwidth}(0.08\paperwidth,0.08\paperheight)
+                \begin{beamercolorbox}[center]{frametitle}
+                        \usebeamerfont{frametitle}\insertframetitle%
+                \end{beamercolorbox}%
+        \end{textblock*}
+        
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+        	\tikz[remember picture,overlay] {%
+        		\draw[plmce-2016blue,line width=0.06cm] (0.073\paperwidth,-0.21\paperheight) -- (\paperwidth,-0.21\paperheight);
+        	}
+        \end{textblock*}
+}
+
+\defbeamertemplate*{footline}{plmce-2016}[1][] {
+	
+	\ifnum \insertpagenumber=1
+	\else
+	    \begin{textblock*}{\paperwidth}(0.025\paperwidth,0.96\paperheight)
+	            \begin{beamercolorbox}{framenumber}
+	                    \usebeamerfont{framenumber}\insertframenumber%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	
+	    \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
