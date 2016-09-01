@@ -1,0 +1,75 @@
+\mode<presentation>
+
+%\setbeamertemplate{frametitle}
+%{\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);}
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+
+\setbeamertemplate{title page}{default}{}
+
+% Itemize items, percona-2016
+\setbeamertemplate{items}[circle]
+
+\setbeamertemplate{section in toc}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{percona-2016green}\textbullet}}\inserttocsection\par}
+
+\setbeamertemplate{itemize item}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subsubitem}[square]
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title page
+\defbeamertemplate*{title page}{percona-2016}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0.73\paperwidth,0.74\paperheight)
+        {\includegraphics[width=0.21\paperwidth,keepaspectratio]{small_logo.png}}
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+            \draw[white,line width=0.004\paperwidth] (0.94\paperwidth,-0.55\paperheight) -- (0.94\paperwidth,-0.63\paperheight);
+        }
+    \end{textblock*}
+
+	\ifx\insertsubtitle\@empty%
+	    \begin{textblock*}{0.87\paperwidth}(0\paperwidth,0.14\paperheight)
+	            \begin{beamercolorbox}{title page header}
+	                \usebeamerfont{title}\inserttitle\hfill%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	\else
+		\begin{textblock*}{0.87\paperwidth}(0.07\paperwidth,0.14\paperheight)
+			\begin{beamercolorbox}{title page header}
+				\usebeamerfont{title}\inserttitle\hfill%
+			\end{beamercolorbox}%
+		\end{textblock*}
+		\begin{textblock*}{0.87\paperwidth}(0.07\paperwidth,0.27\paperheight)
+			\begin{beamercolorbox}{title page header}
+				\usebeamerfont{subtitle}\insertsubtitle\hfill%
+			\end{beamercolorbox}%
+		\end{textblock*}
+	\fi
+
+    \begin{textblock*}{0.63\paperwidth}(0.3\paperwidth,0.55\paperheight)
+    	\begin{beamercolorbox}{date}
+    		\hfill\usebeamerfont{date}\insertdate
+    	\end{beamercolorbox}%
+        \begin{beamercolorbox}{author}
+                \hfill\usebeamerfont{author}\insertauthor\par%
+        \end{beamercolorbox}%
+    \end{textblock*}
+}
+
+%change frame style
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+	\beamer@frametopskip=.2\paperheight plus 1fill\relax%
+	\beamer@framebottomskip=0.5cm plus 1.5fill\relax%
+	\beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
+	\beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+	\def\beamer@initfirstlineunskip{}%
+}
+
+\mode<all>

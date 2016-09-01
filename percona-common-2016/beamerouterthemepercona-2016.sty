@@ -1,0 +1,47 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{percona-2016}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        \hspace{0\paperwidth}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{image1.jpg}}
+        \else
+	        %TODO: move to footline
+	        \hspace{0.754\paperwidth}
+	        \rule{0in}{8.75cm}
+	        {\includegraphics[width=0.21\paperwidth,keepaspectratio]{small_logo.png}}
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{percona-2016}[1][] {
+        \begin{textblock*}{0.95\paperwidth}(0.028\paperwidth,0.08\paperheight)
+            \begin{beamercolorbox}[left]{frametitle}
+                \usebeamerfont{frametitle}\insertframetitle%
+            \end{beamercolorbox}%
+        \end{textblock*}
+        
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+        	\tikz[remember picture,overlay] {%
+        		\draw[percona-2016orange,line width=0.06cm] (0.028\paperwidth,-0.21\paperheight) -- (0.97\paperwidth,-0.21\paperheight);
+        	}
+        \end{textblock*}
+}
+
+\defbeamertemplate*{footline}{percona-2016}[1][] {
+	
+	\ifnum \insertpagenumber=1
+	\else
+	    \begin{textblock*}{\paperwidth}(0.025\paperwidth,0.96\paperheight)
+	            \begin{beamercolorbox}{framenumber}
+	                    \usebeamerfont{framenumber}\insertframenumber%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	
+	    \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
