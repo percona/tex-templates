@@ -7,11 +7,6 @@
         \ifnum\c@framenumber=1%
 	        \hspace{0\paperwidth}
 	        {\includegraphics[height=\paperheight,keepaspectratio]{image1.jpg}}
-        \else
-	        %TODO: move to footline
-	        \hspace{0.754\paperwidth}
-	        \rule{0in}{8.75cm}
-	        {\includegraphics[width=0.21\paperwidth,keepaspectratio]{small_logo.png}}
         \fi%    
 }
 
@@ -38,6 +33,10 @@
 	                    \usebeamerfont{framenumber}\insertframenumber%
 	            \end{beamercolorbox}%
 	    \end{textblock*}
+
+		\begin{textblock*}{\paperwidth}(0.754\paperwidth,0.87\paperheight)
+			{\includegraphics[width=0.21\paperwidth,keepaspectratio]{small_logo.png}}
+		\end{textblock*}
 	
 	    \vskip0.3in%
     \fi

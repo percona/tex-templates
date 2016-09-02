@@ -46,4 +46,44 @@
 %vfill items, thanks http://stackoverflow.com/a/3229655
 \newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
 
+\AtBeginSection{
+	\usebackgroundtemplate{
+		\includegraphics[width=\paperwidth,keepaspectratio]{image3.jpg}
+	}
+	\frame[plain]{\sectionpage}
+	\usebackgroundtemplate{}
+}
+
+\AtBeginSubsection{
+	\usebackgroundtemplate{
+		\includegraphics[width=\paperwidth,keepaspectratio]{image3.jpg}
+	}
+	\frame[plain]{\subsectionpage}
+	\usebackgroundtemplate{}
+}
+\AtBeginSubsubsection{\frame{\subsubsectionpage}}
+
+\newcommand{\lastslide}{
+	\usebackgroundtemplate{
+		\includegraphics[width=\paperwidth,keepaspectratio]{image3.jpg}
+	}
+	\begin{frame}[plain]
+		\begin{textblock*}{\paperwidth}(0.31\paperwidth,0.43\paperheight)
+        	{\includegraphics[width=0.07\paperwidth,keepaspectratio]{p.png}}
+    	\end{textblock*}
+
+		\begin{textblock*}{\paperwidth}(0pt,0pt)
+       		\tikz[remember picture,overlay] {%
+            	\draw[white,line width=0.005\paperwidth] (0.39\paperwidth,-0.42\paperheight) -- (0.39\paperwidth,-0.56\paperheight);
+        	}
+		\end{textblock*}
+
+	    \begin{textblock*}{0.46\paperwidth}(0.41\paperwidth,0.44\paperheight)
+    	    \usebeamerfont{lastpage}\color{white}DATABASE PERFORMANCE\\MATTERS\par
+	    \end{textblock*}
+	\end{frame}
+	%\frame[plain]{\lastslide}
+	\usebackgroundtemplate{}
+}
+
 \mode<all>

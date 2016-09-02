@@ -13,8 +13,8 @@
 \setbeamertemplate{section in toc}
 {\leavevmode{\raise0.5pt\hbox{\textcolor{percona-2016green}\textbullet}}\inserttocsection\par}
 
-\setbeamertemplate{itemize item}{\raise0.1pt\hbox{\textbullet}}
-\setbeamertemplate{itemize subitem}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize item}{\small\raise5pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\small\raise5pt\hbox{\textbullet}}
 \setbeamertemplate{itemize subsubitem}[square]
 
 \setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
@@ -60,6 +60,66 @@
                 \hfill\usebeamerfont{author}\insertauthor\par%
         \end{beamercolorbox}%
     \end{textblock*}
+}
+
+\defbeamertemplate*{section page}{percona}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0.73\paperwidth,0.82\paperheight)
+		{\includegraphics[width=0.21\paperwidth,keepaspectratio]{white_logo.png}}
+	\end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+		\tikz[remember picture,overlay] {%
+			\draw[percona-2016orange1,line width=0.005\paperwidth] (0\paperwidth,-0.28\paperheight) -- (\paperwidth,-0.28\paperheight);
+			\draw[percona-2016bordo1,line width=0.002\paperwidth] (0\paperwidth,-0.285\paperheight) -- (\paperwidth,-0.285\paperheight);
+			\draw[percona-2016orange1,line width=0.006\paperwidth] (0\paperwidth,-0.7\paperheight) -- (\paperwidth,-0.7\paperheight);
+		}
+	\end{textblock*}
+
+	\begin{textblock*}{4\paperwidth}(0\paperwidth,0.74\paperheight)
+		\tikz[remember picture,overlay] {%
+			\clip (0,0.045\paperheight) rectangle (\paperwidth, 0.453\paperheight);
+			\pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{\paperwidth}{1\paperheight}}
+			\draw[style=help lines,color=percona-2016orange1] (-24,-24) grid[xstep=0.008\paperwidth,ystep=1\paperwidth] (14,14);
+		}
+	\end{textblock*}
+
+	\begin{textblock*}{0.92\paperwidth}(0.05\paperwidth,0.39\paperheight)
+    	\usebeamerfont{section title}\color{white}\insertsection\par
+	\end{textblock*}
+}
+
+% Subection page: default
+\defbeamertemplate*{subsection page}{percona}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0.73\paperwidth,0.82\paperheight)
+		{\includegraphics[width=0.21\paperwidth,keepaspectratio]{white_logo.png}}
+	\end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+		\tikz[remember picture,overlay] {%
+			\draw[percona-2016orange1,line width=0.005\paperwidth] (0\paperwidth,-0.28\paperheight) -- (\paperwidth,-0.28\paperheight);
+			\draw[percona-2016bordo1,line width=0.002\paperwidth] (0\paperwidth,-0.285\paperheight) -- (\paperwidth,-0.285\paperheight);
+			\draw[percona-2016orange1,line width=0.006\paperwidth] (0\paperwidth,-0.7\paperheight) -- (\paperwidth,-0.7\paperheight);
+		}
+	\end{textblock*}
+
+	\begin{textblock*}{4\paperwidth}(0\paperwidth,0.74\paperheight)
+		\tikz[remember picture,overlay] {%
+			\clip (0,0.045\paperheight) rectangle (\paperwidth, 0.453\paperheight);
+			\pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{\paperwidth}{1\paperheight}}
+			\draw[style=help lines,color=percona-2016orange1] (-24,-24) grid[xstep=0.008\paperwidth,ystep=1\paperwidth] (14,14);
+		}
+	\end{textblock*}
+
+	\begin{textblock*}{0.92\paperwidth}(0.05\paperwidth,0.39\paperheight)
+    	\usebeamerfont{section title}\color{white}\insertsection\par
+	\end{textblock*}
+
+	\begin{textblock*}{0.92\paperwidth}(0.05\paperwidth,0.49\paperheight)
+		\usebeamerfont{section short title}\insertsubsection\par
+	\end{textblock*}
+	
 }
 
 %change frame style
