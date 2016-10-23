@@ -23,4 +23,4 @@ Initial installation
 Usage
 =====
 
-Open *template.tex file in TexStudio and click "Build & View" icno
+Open *template.tex file in TexStudio and click "Build & View" icon
