@@ -1,0 +1,30 @@
+\mode<presentation>
+
+%Custom colors
+\definecolor{pldublin-2017green}{RGB}{4,108,62}
+\definecolor{pldublin-2017darkgreen}{RGB}{0,68,41}
+\definecolor{pldublin-2017lightgreen}{RGB}{42,145,100}
+\definecolor{pldublin-2017itemgreen}{RGB}{129,176,32}
+\definecolor{pldublin-2017orange}{RGB}{249,142,12}
+
+% Settings
+\setbeamercolor*{itemize item}{textcolor=pldublin-2107itemgreen,fg=pldublin-2017itemgreen}
+\setbeamercolor*{itemize subitem}{textcolor=pldublin-2017darkgreen,fg=pldublin-2017darkgreen}
+\setbeamercolor*{itemize subsubitem}{fg=plmce-2016gray}
+\setbeamercolor{itemize/enumerate body}{fg=pldublin-2017itemgreen}
+\setbeamercolor{itemize/enumerate subbody}{fg=pldublin-2017darkgreen}
+\setbeamercolor{itemize/enumerate subsubbody}{fg=plmce-2016gray}
+
+\setbeamercolor*{frametitle}{fg=pldublin-2017darkgreen}
+
+\setbeamertemplate{background canvas}{%
+    \ifnum\c@framenumber=1%
+        % On title page
+        \color{pldublin-2017darkgreen}\rule{\paperwidth}{\paperheight}
+    \else%
+        % Other frames background
+        \color{white}\rule{\paperwidth}{\paperheight}
+    \fi%
+}
+
+\mode<all>

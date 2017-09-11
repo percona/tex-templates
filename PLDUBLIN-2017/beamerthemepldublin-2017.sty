@@ -15,7 +15,7 @@
 
 \usepackage[absolute,overlay]{textpos}
 
-\graphicspath{{../plmce-2016/plmce-2016_images/}, {./plmce-2017_images}}
+\graphicspath{{../plmce-2016/plmce-2016_images/}, {./pldublin-2017_images}}
 
 \setbeamersize{text margin left=18pt,mini frame offset=118cm}
 
@@ -27,14 +27,14 @@
 \ProcessOptionsBeamer
 
 \usefonttheme{plmce-2016}
+\usefonttheme{pldublin-2017}
 \usecolortheme{percona-2016}
 \usecolortheme{plmce-2016}
-\useinnertheme{plmce-2017}
-%\useinnertheme{rounded}
-\useoutertheme{plmce-2017}
+\usecolortheme{pldublin-2017}
+\useinnertheme{pldublin-2017}
+\useoutertheme{pldublin-2017}
 
 \setbeamertemplate{navigation symbols}{}
-%\setbeamertemplate{blocks}[rounded][shadow=fase]  
 
 
 
@@ -42,7 +42,7 @@
 
 %Custom commands
 %highlight item
-\renewcommand{\alert}[1]{\textcolor{plmce-2016orange}{#1}}
+\renewcommand{\alert}[1]{\textcolor{pldublin-2017orange}{#1}}
 
 %vfill items, thanks http://stackoverflow.com/a/3229655
 \newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}

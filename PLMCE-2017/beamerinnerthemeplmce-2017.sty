@@ -77,6 +77,31 @@
     \end{textblock*}
 }
 
+\defbeamertemplate*{section page}{plmce-2017}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0.73\paperwidth,0.82\paperheight)
+        {\includegraphics[width=0.21\paperwidth,keepaspectratio]{white_logo.png}}
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+			\draw[fill=plmce-2016blue,plmce-2016titlepageblue] (0,0) rectangle (\paperwidth,-0.255\paperheight);
+			\draw[fill=plmce-2016blue,plmce-2016titlepageblue] (0.03\paperwidth,-0.27\paperheight) rectangle (\paperwidth,-0.73\paperheight);
+			\draw[plmce-2016titlepagegreen,line width=0.03cm] (0.03\paperwidth,-0.51\paperheight) -- (0.6\paperwidth,-0.51\paperheight);
+			\draw[plmce-2016titlepagegreen,line width=0.06\paperwidth] (0,-0.27\paperheight) -- (0,-0.735
+\paperheight);
+			\draw[plmce-2016titlepagegreen,line width=0.01\paperwidth] (0.995\paperwidth,-0.265\paperheight) -- (0.995\paperwidth,-0.735\paperheight);
+			\draw[fill=plmce-2016blue,plmce-2016titlepageblue] (0,-0.745\paperheight) rectangle (\paperwidth,-1\paperheight);
+			\draw[plmce-2016violet,line width=0.016\paperwidth] (0\paperwidth,-0.27\paperheight) -- (\paperwidth,-0.27\paperheight);
+			\draw[plmce-2016violet,line width=0.01\paperwidth] (0\paperwidth,-0.74\paperheight) -- (\paperwidth,-0.74\paperheight);
+        }
+    \end{textblock*}
+
+    \begin{textblock*}{0.92\paperwidth}(0.05\paperwidth,0.39\paperheight)
+        \usebeamerfont{section title}\textcolor{white}{\insertsection}\par
+    \end{textblock*}
+}
+
 %change frame style
 %see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
 \define@key{beamerframe}{c}[true]{% centered

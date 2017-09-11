@@ -2,17 +2,16 @@
 
 
 % Frame title
-\defbeamertemplate*{background}{plmce-2017}[1][]
+\defbeamertemplate*{background}{pldublin-2017}[1][]
 {
         \ifnum\c@framenumber=1%
 	        \hspace{0.647\paperwidth}
-	        {\includegraphics[height=\paperheight,keepaspectratio]{logobg-plmce-2017.png}}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{logo_bg_dublin_2017.png}}
         \else
-	        %TODO: move to footline
         \fi%    
 }
 
-\defbeamertemplate*{frametitle}{plmce-2017}[1][] {
+\defbeamertemplate*{frametitle}{pldublin-2017}[1][] {
         \begin{textblock*}{\paperwidth}(0\paperwidth,0.08\paperheight)
                 \begin{beamercolorbox}[center]{frametitle}
                         \usebeamerfont{frametitle}\insertframetitle%
@@ -21,12 +20,12 @@
         
         \begin{textblock*}{\paperwidth}(0pt,0pt)
         	\tikz[remember picture,overlay] {%
-        		\draw[plmce-2016blue,line width=0.06cm] (0.073\paperwidth,-0.21\paperheight) -- (\paperwidth,-0.21\paperheight);
+        		\draw[pldublin-2017green,line width=0.06cm] (0.073\paperwidth,-0.21\paperheight) -- (\paperwidth,-0.21\paperheight);
         	}
         \end{textblock*}
 }
 
-\defbeamertemplate*{footline}{plmce-2017}[1][] {
+\defbeamertemplate*{footline}{pldublin-2017}[1][] {
 	
 	\ifnum \insertpagenumber=1
 	\else
@@ -36,8 +35,8 @@
 	            \end{beamercolorbox}%
 	    \end{textblock*}
 	
-	    \begin{textblock*}{\paperwidth}(0.754\paperwidth,0.87\paperheight)
-			{\includegraphics[width=0.21\paperwidth,keepaspectratio]{small_logo.png}}
+	    \begin{textblock*}{\paperwidth}(0.83\paperwidth,0.84\paperheight)
+			{\includegraphics[width=0.14\paperwidth,keepaspectratio]{logo_dublin.png}}
 	    \end{textblock*}
 
 		\vskip0.3in%
