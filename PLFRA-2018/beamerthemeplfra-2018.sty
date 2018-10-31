@@ -1,0 +1,56 @@
+%This is 16x9 template
+%You need to include it as
+%\documentclass[aspectratio=169,<options>]{beamer}
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{pgfplots}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usetikzlibrary{positioning,calc}
+
+\usepackage[absolute,overlay]{textpos}
+
+\graphicspath{{../plmce-2016/plmce-2016_images/}, {../pldublin-2017/pldublin-2017_images}, {./plfra-2018_images}}
+
+\setbeamersize{text margin left=18pt,mini frame offset=118cm}
+
+% Settings
+%use it for wide screens
+%\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter}
+
+\DeclareOptionBeamer{titlepage}{\PassOptionsToPackage{titlepage=#1}{beamertheme-inner}}
+\ProcessOptionsBeamer
+
+\usefonttheme{plmce-2016}
+\usefonttheme{pldublin-2017}
+\usecolortheme{percona-2016}
+\usecolortheme{plmce-2016}
+\usecolortheme{pldublin-2017}
+\usecolortheme{plfra-2018}
+\useinnertheme{plfra-2018}
+\useoutertheme{plfra-2018}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+
+%\RequirePackage{listings}
+
+%Custom commands
+%highlight item
+\renewcommand{\alert}[1]{\textcolor{pldublin-2017orange}{#1}}
+
+%vfill items, thanks http://stackoverflow.com/a/3229655
+\newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
+\newenvironment{fixedvfilleditems}{\begin{overlayarea}{\textwidth}{\textheight} \begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize} \end{overlayarea}}
+
+\AtBeginSection{
+    \frame[plain]{\sectionpage}
+}
+
+\mode<all>
