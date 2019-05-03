@@ -81,7 +81,37 @@
 	\end{textblock*}
 	
     \begin{textblock*}{0.88\paperwidth}(0.05\paperwidth,0.435\paperheight)
-        \hfill\usebeamerfont{section title}{\insertsection}\par
+        \hfill\usebeamerfont{section title}\usebeamercolor[fg]{section title}{\insertsection}\par
+    \end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0.667\paperheight)
+		{\includegraphics[width=\paperwidth,keepaspectratio]{bottom-2019.png}}
+	\end{textblock*}
+}
+
+\defbeamertemplate*{subsection page}{plmce-2019}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0\paperwidth,0\paperheight)
+        {\includegraphics[width=\paperwidth,keepaspectratio]{titlebg-2019.jpeg}}
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+			\draw[fill=white,white] (0\paperwidth,-0.243\paperheight) rectangle (\paperwidth,-0.695\paperheight);
+			\draw[plmce-2019orange,line width=0.001\paperwidth] (0.078\paperwidth,-0.557\paperheight) -- (0.925\paperwidth,-0.557\paperheight);
+        }
+    \end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0.242\paperheight)
+		{\includegraphics[width=\paperwidth,keepaspectratio]{top-2019.png}}
+	\end{textblock*}
+	
+    \begin{textblock*}{0.88\paperwidth}(0.05\paperwidth,0.435\paperheight)
+		\hfill\usebeamerfont{section title}\usebeamercolor[fg]{section title}{\insertsection}\par
+    \end{textblock*}
+
+    \begin{textblock*}{0.88\paperwidth}(0.05\paperwidth,0.58\paperheight)
+        \hfill\usebeamerfont{subsection title}{\usebeamercolor[fg]{subsection title}\insertsubsection}\par
     \end{textblock*}
 
 	\begin{textblock*}{\paperwidth}(0\paperwidth,0.667\paperheight)
