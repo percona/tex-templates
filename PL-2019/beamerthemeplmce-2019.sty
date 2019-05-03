@@ -1,0 +1,49 @@
+%This is 16x9 template
+%You need to include it as
+%\documentclass[aspectratio=169,<options>]{beamer}
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{pgfplots}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usetikzlibrary{positioning,calc}
+
+\usepackage[absolute,overlay]{textpos}
+
+\graphicspath{{../plmce-2016/plmce-2016_images/}, {./plmce-2019_images}}
+
+\setbeamersize{text margin left=18pt,mini frame offset=118cm}
+
+% Settings
+\DeclareOptionBeamer{titlepage}{\PassOptionsToPackage{titlepage=#1}{beamertheme-inner}}
+\ProcessOptionsBeamer
+
+\usefonttheme{plmce-2016}
+\usefonttheme{plmce-2019}
+\usecolortheme{percona}
+\usecolortheme{percona-2016}
+\usecolortheme{plmce-2016}
+\usecolortheme{plmce-2019}
+\useinnertheme{plmce-2019}
+\useoutertheme{plmce-2019}
+
+\setbeamertemplate{navigation symbols}{}
+
+%Custom commands
+%highlight item
+\renewcommand{\alert}[1]{\textbf{\textcolor{plmce-2019orange}{#1}}}
+
+%vfill items, thanks http://stackoverflow.com/a/3229655
+\newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
+\newenvironment{fixedvfilleditems}{\begin{overlayarea}{\textwidth}{\textheight} \begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize} \end{overlayarea}}
+
+\AtBeginSection{
+    \frame[plain]{\sectionpage}
+}
+
+\mode<all>

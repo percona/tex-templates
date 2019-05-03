@@ -1,0 +1,102 @@
+\mode<presentation>
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+
+\setbeamertemplate{title page}{default}{}
+
+% Itemize items, plmce-2016
+\setbeamertemplate{items}[circle]
+
+\setbeamertemplate{itemize item}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subsubitem}[square]
+
+\setbeamertemplate{section in toc}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{plmce-2019titleblue}\textbullet}}\inserttocsection\par}
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title page
+\defbeamertemplate*{title page}{plmce-2019}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0.73\paperwidth,0.235\paperheight)
+		{\includegraphics[height=0.53\paperheight,keepaspectratio]{logo-plmce-2019.png}}
+	\end{textblock*}
+	
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+	\tikz[remember picture,overlay] {%
+		\draw[fill=white,white] (0\paperwidth,-0.27\paperheight) rectangle (0.655\paperwidth,-0.73\paperheight);
+		\draw[plmce-2019titleblue,line width=0.03cm,dotted] (0.03\paperwidth,-0.51\paperheight) -- (0.59\paperwidth,-0.51\paperheight);
+	}
+	\end{textblock*}
+	
+	\begin{textblock*}{\paperwidth}(0.04\paperwidth,0.268\paperheight)
+		{\includegraphics[width=0.52\paperwidth,keepaspectratio]{image00.png}}
+	\end{textblock*}
+	
+	\begin{textblock*}{\paperwidth}(0.04\paperwidth,0.717\paperheight)
+		{\includegraphics[height=0.015\paperheight,keepaspectratio]{image000.png}}
+	\end{textblock*}
+
+	\ifx\insertsubtitle\@empty%
+	    \begin{textblock*}{0.65\paperwidth}(0.045\paperwidth,0.365\paperheight)
+	            \begin{beamercolorbox}{title page header}
+	                    \usebeamerfont{title}\inserttitle\hfill%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	\else
+		\begin{textblock*}{0.64\paperwidth}(0.045\paperwidth,0.365\paperheight)
+			\begin{beamercolorbox}{title page header}
+				\usebeamerfont{title}\inserttitle\hfill\\\usebeamerfont{subtitle}\insertsubtitle\hfill%
+			\end{beamercolorbox}%
+		\end{textblock*}
+	\fi
+
+    \begin{textblock*}{0.58\paperwidth}(0.05\paperwidth,0.545\paperheight)
+    	\begin{beamercolorbox}{date}
+    		\usebeamerfont{date}\insertdate\hfill
+    	\end{beamercolorbox}%
+        \begin{beamercolorbox}{author}
+            \usebeamerfont{author}\insertauthor\hfill\par%
+        \end{beamercolorbox}%
+    \end{textblock*}
+}
+
+\defbeamertemplate*{section page}{plmce-2019}[1][]
+{
+    \begin{textblock*}{\paperwidth}(0\paperwidth,0\paperheight)
+        {\includegraphics[width=\paperwidth,keepaspectratio]{titlebg-2019.jpeg}}
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+			\draw[fill=white,white] (0\paperwidth,-0.243\paperheight) rectangle (\paperwidth,-0.695\paperheight);
+			\draw[plmce-2019orange,line width=0.001\paperwidth] (0.078\paperwidth,-0.557\paperheight) -- (0.925\paperwidth,-0.557\paperheight);
+        }
+    \end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0.242\paperheight)
+		{\includegraphics[width=\paperwidth,keepaspectratio]{top-2019.png}}
+	\end{textblock*}
+	
+    \begin{textblock*}{0.88\paperwidth}(0.05\paperwidth,0.435\paperheight)
+        \hfill\usebeamerfont{section title}{\insertsection}\par
+    \end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0.667\paperheight)
+		{\includegraphics[width=\paperwidth,keepaspectratio]{bottom-2019.png}}
+	\end{textblock*}
+}
+
+%change frame style
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+	\beamer@frametopskip=.15\paperheight plus 1fill\relax%
+	\beamer@framebottomskip=0.5cm plus 1.5fill\relax%
+	\beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
+	\beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+	\def\beamer@initfirstlineunskip{}%
+}
+
+\mode<all>

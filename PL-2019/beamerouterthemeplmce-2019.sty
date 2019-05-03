@@ -1,0 +1,50 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plmce-2019}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        %\hspace{0.647\paperwidth}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{titlebg-2019.jpeg}}
+        \else
+	        %TODO: move to footline
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{plmce-2019}[1][] {
+        \begin{textblock*}{\paperwidth}(0.07\paperwidth,0.08\paperheight)
+                \begin{beamercolorbox}[left]{frametitle}
+                        \usebeamerfont{frametitle}\insertframetitle%
+                \end{beamercolorbox}%
+        \end{textblock*}
+}
+
+\defbeamertemplate*{footline}{plmce-2019}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+            \tikz[remember picture,overlay] {%
+                \draw[fill=plfra-2018gray,plfra-2018gray] (0.845\paperwidth,-0.891\paperheight) rectangle (\paperwidth,-0.971\paperheight);
+                \draw[fill=plfra-2018gray,plfra-2018gray] (0.845\paperwidth,-0.931\paperheight) circle (0.04\paperheight);
+                \draw[plfra-2018lightgray,densely dashed] (0.972\paperwidth,-0.915\paperheight) rectangle (0.986\paperwidth,-0.948\paperheight);
+            }
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.973\paperwidth,0.924\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertframenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.833\paperwidth,0.899\paperheight)
+            {\includegraphics[width=0.12\paperwidth,keepaspectratio]{logo_white.png}}
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
