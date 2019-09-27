@@ -1,0 +1,42 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plam-2019}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        %\hspace{0.647\paperwidth}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{titlebg-2019.jpeg}}
+        \else
+	        %TODO: move to footline
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{plam-2019}[1][] {
+        \begin{textblock*}{\paperwidth}(0.07\paperwidth,0.08\paperheight)
+                \begin{beamercolorbox}[left]{frametitle}
+                        \usebeamerfont{frametitle}\insertframetitle%
+                \end{beamercolorbox}%
+        \end{textblock*}
+}
+
+\defbeamertemplate*{footline}{plam-2019}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0.868\paperwidth,0.91\paperheight)
+            {\includegraphics[width=0.14\paperwidth,keepaspectratio]{plam2019-number.png}}
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.973\paperwidth,0.924\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertframenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
