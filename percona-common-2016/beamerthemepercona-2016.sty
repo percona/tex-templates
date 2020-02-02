@@ -42,6 +42,8 @@
 %highlight item
 \renewcommand{\alert}[1]{\textcolor{percona-2016orange}{#1}}
 
+\newcommand{\qritem}[2]{\item[{\qrcode[height=0.1\paperheight]{#1}}] \href{#1}{#2}}
+
 %vfill items, thanks http://stackoverflow.com/a/3229655
 \newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
 \newenvironment{fixedvfilleditems}{\begin{overlayarea}{\textwidth}{\textheight} \begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize} \end{overlayarea}}
