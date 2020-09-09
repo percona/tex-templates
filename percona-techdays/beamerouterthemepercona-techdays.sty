@@ -1,0 +1,49 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plmce-2019}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        %\hspace{0.647\paperwidth}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{techdays_title_bg.jpg}}
+        \else
+	        %TODO: move to footline
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{plmce-2019}[1][] {
+        \begin{textblock*}{\paperwidth}(0.07\paperwidth,0.08\paperheight)
+                \begin{beamercolorbox}[left]{frametitle}
+                        \usebeamerfont{frametitle}\insertframetitle%
+                \end{beamercolorbox}%
+        \end{textblock*}
+}
+
+\defbeamertemplate*{footline}{plmce-2019}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+            \tikz[remember picture,overlay] {%
+                \draw[fill=percona-techdays-gray,percona-techdays-gray] (0.875\paperwidth,-0.891\paperheight) rectangle (\paperwidth,-0.971\paperheight);
+                \draw[fill=percona-techdays-gray,percona-techdays-gray] (0.875\paperwidth,-0.931\paperheight) circle (0.04\paperheight);
+            }
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.968\paperwidth,0.910\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertframenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.863\paperwidth,0.899\paperheight)
+            {\includegraphics[width=0.12\paperwidth,keepaspectratio]{tech_days_logo_small.png}}
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
