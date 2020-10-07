@@ -1,0 +1,44 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{background}{plmce-2020}[1][]
+{
+        \ifnum\c@framenumber=1%
+	        %\hspace{0.647\paperwidth}
+	        {\includegraphics[height=\paperheight,keepaspectratio]{titlebg-2020.jpg}}
+        \else
+	        %TODO: move to footline
+        \fi%    
+}
+
+\defbeamertemplate*{frametitle}{plmce-2020}[1][] {
+      \@tempdima=\textwidth%
+      \advance\@tempdima by\beamer@leftmargin%
+      \advance\@tempdima by\beamer@rightmargin%
+      \begin{beamercolorbox}[sep=0.08\paperheight,#1,wd=\the\@tempdima]{frametitle}
+          \usebeamerfont{frametitle}%
+          \strut\insertframetitle\par%
+      \end{beamercolorbox}%
+}
+
+\defbeamertemplate*{footline}{plmce-2020}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0.890\paperwidth,0.910\paperheight)
+            {\includegraphics[width=0.12\paperwidth,keepaspectratio]{logo-small-2020.png}}
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.983\paperwidth,0.924\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertframenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
