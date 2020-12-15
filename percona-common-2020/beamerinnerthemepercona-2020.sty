@@ -1,0 +1,105 @@
+\mode<presentation>
+
+% Itemize items
+\setbeamertemplate{items}[circle]
+
+\setbeamertemplate{itemize item}{\raisebox{-2pt}{\scalebox{2}{\color{\percona_2020_defaultcolor}\hbox{\textbullet}}}}
+\setbeamertemplate{itemize subitem}{\raisebox{0pt}{\scalebox{1.5}{\color{\percona_2020_defaultcolor}\hbox{\textbullet}}}}
+\setbeamertemplate{itemize subsubitem}{\raisebox{1pt}{\scalebox{0.5}{\color{\percona_2020_defaultcolor}$\blacksquare$}}}
+
+\setbeamertemplate{section in toc}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{percona-2020orange}\textbullet}}\inserttocsection\par}
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title Page
+% width - 13.35, height - 7.5
+%\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+%\setbeamertemplate{title page}{default}{}
+%\setbeamersize{text margin left=0cm} 
+\defbeamertemplate*{title page}{percona-2020}
+{
+    \begin{tikzpicture}[overlay, remember picture]
+      \begin{scope}[shift={(current page.north west)}] 
+        \fill[percona-2020orange](0\paperwidth,-0.113\paperheight) rectangle (0.749\paperwidth,-0.887\paperheight);
+        \fill[percona-2020lightgray](0.76\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
+      \end{scope}
+    \end{tikzpicture}
+
+    \begin{textblock*}{0.675\paperwidth}(0.09\paperwidth,0.573\paperheight)
+      \begin{beamercolorbox}{title page header}
+        \usebeamerfont{title}\inserttitle\hfill%
+      \end{beamercolorbox}%
+    \end{textblock*}
+    \ifx\insertsubtitle\@empty%
+    \else
+        \begin{textblock*}{0.675\paperwidth}(0.09\paperwidth,0.7\paperheight)
+          \begin{beamercolorbox}{subtitle}
+            \usebeamerfont{subtitle}\insertsubtitle\hfill%
+          \end{beamercolorbox}%
+        \end{textblock*}
+    \fi
+
+    \begin{textblock*}{\paperwidth}(0.089\paperwidth,0.914\paperheight)
+        {\includegraphics[width=0.12\paperwidth,keepaspectratio]{percona_logo2020.png}}
+    \end{textblock*}
+}
+
+\defbeamertemplate*{section page}{percona-2020}[1][percona-2020orange]
+{
+    \begin{tikzpicture}[overlay, remember picture]
+      \begin{scope}[shift={(current page.north west)}] 
+        \fill[#1](0\paperwidth,-0.113\paperheight) rectangle (0.749\paperwidth,-0.887\paperheight);
+        \fill[percona-2020lightgray](0.76\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
+      \end{scope}
+    \end{tikzpicture}
+
+    \begin{textblock*}{0.675\paperwidth}(0.09\paperwidth,0.573\paperheight)
+      \begin{beamercolorbox}{section}
+        \usebeamerfont{section title}\insertsection\hfill%
+      \end{beamercolorbox}%
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0.089\paperwidth,0.914\paperheight)
+        {\includegraphics[width=0.12\paperwidth,keepaspectratio]{percona_logo2020.png}}
+    \end{textblock*}
+}
+
+\defbeamertemplate*{subsection page}{percona-2020}[1][percona-2020orange]
+{
+    \begin{tikzpicture}[overlay, remember picture]
+      \begin{scope}[shift={(current page.north west)}] 
+        \fill[#1](0\paperwidth,-0.113\paperheight) rectangle (0.749\paperwidth,-0.887\paperheight);
+        \fill[percona-2020lightgray](0.76\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
+      \end{scope}
+    \end{tikzpicture}
+
+    \begin{textblock*}{0.675\paperwidth}(0.09\paperwidth,0.573\paperheight)
+      \begin{beamercolorbox}{section}
+        \usebeamerfont{section title}\insertsection\hfill%
+      \end{beamercolorbox}%
+    \end{textblock*}
+    
+    \begin{textblock*}{0.675\paperwidth}(0.09\paperwidth,0.7\paperheight)
+      \begin{beamercolorbox}{subsection}
+        \usebeamerfont{subtitle}\insertsubsection\hfill%
+      \end{beamercolorbox}%
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0.089\paperwidth,0.914\paperheight)
+        {\includegraphics[width=0.12\paperwidth,keepaspectratio]{percona_logo2020.png}}
+    \end{textblock*}
+}
+
+%frame borders
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+    \beamer@frametopskip=.05\paperheight\relax%
+    \beamer@framebottomskip=0.5cm plus 1.5fill\relax%
+%    \beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
+%    \beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+%    \def\beamer@initfirstlineunskip{}%
+}
+
+\mode<all>

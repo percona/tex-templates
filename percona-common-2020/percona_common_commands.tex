@@ -1,0 +1,26 @@
+\renewcommand{\alert}[1]{\textbf{\textcolor{\percona_2020_defaultcolor}{#1}}}
+
+\newcommand{\qritem}[2]{\item[{\qrcode[height=0.1\paperheight]{#1}}] \href{#1}{#2}}
+
+%vfill items, thanks http://stackoverflow.com/a/3229655
+\newenvironment{vfilleditems}{\begin{itemize} \let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize}}
+
+\newenvironment{fixedvfilleditems}{\begin{overlayarea}{\textwidth}{\textheight} \begin{itemize}\let\olditem\item \renewcommand\item{\vfill\olditem}}{\end{itemize} \end{overlayarea}}
+
+% taken from https://tex.stackexchange.com/a/287603
+\newcommand{\soutthick}[1]{%
+	\renewcommand{\ULthickness}{1.4pt}%
+	\sout{#1}%
+	\renewcommand{\ULthickness}{.4pt}% Resetting to ulem default
+}
+
+% Change default color everywhere
+\newcommand{\changedefaultcolor}[1]{%
+	\def\percona_2020_defaultcolor{#1}%
+    \setbeamertemplate{section page}[percona-2020][#1]%
+    \setbeamertemplate{subsection page}[percona-2020][#1]%
+    \setbeamertemplate{frametitle}[percona-2020][#1]%
+    \setbeamertemplate{footline}[percona-2020][#1]%
+}
+
+\newcommand{\resetdefaultcolor}{\changedefaultcolor{percona-2020orange}}

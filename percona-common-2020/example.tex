@@ -1,0 +1,146 @@
+%& -jobname=main-notes
+%bug in geometry if used with beamer
+\makeatletter\let\ifGm@compatii\relax\makeatother
+%\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
+
+%\setbeameroption{show notes}
+%\setbeameroption{show only notes}
+
+\usepackage[utf8]{inputenc}
+\usetheme{percona-2020}
+%\usetheme{percona-techdays}
+
+\usepackage[normalem]{ulem}
+\usepackage{fancyvrb}
+\usepackage{xcolor,colortbl}
+\usepackage{array}
+\usepackage{qrcode}
+\usepackage{wasysym}
+
+%delly
+\pgfplotsset{compat=1.13}
+
+\title[Test]{Percona Test Template}
+\subtitle{Unbiased Open Source Database Experts}
+\author{Sveta Smirnova}
+\institute{Percona}
+\date{December 20, 2020}
+
+\graphicspath{{./images/}}
+
+\note{
+Stress that with RSU we are getting the same blockage as with TOI, just surprised
+}
+
+\begin{document}
+	
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+	\vfill
+	\tableofcontents
+\end{frame}
+
+\section{First Section}
+
+\subsection{First First Subsection}
+
+\begin{frame}{First Frame}
+	Frame with Very Long Content. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more....\\
+	XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \\
+	Frame with Very Long Content. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more....\\
+	Frame with Very Long Content. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more....\\
+	Frame with Very Long Content. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more....\\
+	Frame with Very Long Content. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more....\\
+\end{frame}
+
+\begin{frame}{\small{Frame with Very Long Title. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more.}}
+	content...
+\end{frame}
+
+\begin{frame}{Commands test}
+	\soutthick{foo}
+	\textbf{foo}
+	\begin{vfilleditems}
+		\item Item 1
+		\item \alert{Bar}
+	\end{vfilleditems}
+	\begin{fixedvfilleditems}
+		\item Item 2
+		\qritem{http://percona.com}{Percona}
+		\item Item 3
+		\begin{itemize}
+			\item Item 4
+			\item Item 5
+			\begin{itemize}
+				\item Item 6
+				\item Item 7
+			\end{itemize}
+		\end{itemize}
+		\item Item 8
+		\item Item 9
+		\item Item 10
+		\item Item 11
+	\end{fixedvfilleditems}
+\end{frame}
+
+\changedefaultcolor{percona-2020red}
+
+\section{Second Section}
+
+\subsection{Second First Subsection}
+
+\begin{frame}{Second Frame}
+	content...
+\end{frame}
+
+\begin{frame}{Second Commands test}
+	\soutthick{foo}
+	\textbf{foo}
+	\begin{vfilleditems}
+		\item Item 1
+		\item \alert{Bar}
+	\end{vfilleditems}
+	\begin{fixedvfilleditems}
+		\item Item 2
+		\qritem{http://percona.com}{Percona}
+		\item Item 3
+		\begin{itemize}
+			\item Item 4
+			\item Item 5
+			\begin{itemize}
+				\item Item 6
+				\item Item 7
+			\end{itemize}
+		\end{itemize}
+		\item Item 8
+		\item Item 9
+		\item Item 10
+		\item Item 11
+	\end{fixedvfilleditems}
+\end{frame}
+
+\subsection{Second Second Subsection}
+
+\changedefaultcolor{percona-2020violet}
+
+\section{Third Section}
+
+\subsection{Third First Subsection}
+
+\begin{frame}{Some Violet Frame}
+	content...
+\end{frame}
+
+\resetdefaultcolor
+
+\section{Fourth Section}
+
+\begin{frame}{Back to Orange}
+	content...
+\end{frame}
+
+\end{document}

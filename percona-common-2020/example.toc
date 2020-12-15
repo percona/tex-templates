@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{First Section}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{First First Subsection}{4}{0}{1}
+\beamer@sectionintoc {2}{Second Section}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Second First Subsection}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Second Second Subsection}{12}{0}{2}
+\beamer@sectionintoc {3}{Third Section}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Third First Subsection}{14}{0}{3}
+\beamer@sectionintoc {4}{Fourth Section}{16}{0}{4}
