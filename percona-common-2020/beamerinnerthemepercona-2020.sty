@@ -15,9 +15,6 @@
 
 % Title Page
 % width - 13.35, height - 7.5
-%\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
-%\setbeamertemplate{title page}{default}{}
-%\setbeamersize{text margin left=0cm} 
 \defbeamertemplate*{title page}{percona-2020}
 {
     \begin{tikzpicture}[overlay, remember picture]
@@ -97,9 +94,6 @@
 \define@key{beamerframe}{c}[true]{% centered
     \beamer@frametopskip=.05\paperheight\relax%
     \beamer@framebottomskip=0.5cm plus 1.5fill\relax%
-%    \beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
-%    \beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
-%    \def\beamer@initfirstlineunskip{}%
 }
 
 \mode<all>

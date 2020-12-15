@@ -17,6 +17,7 @@
 \usepackage{array}
 \usepackage{qrcode}
 \usepackage{wasysym}
+\usepackage{listings}
 
 %delly
 \pgfplotsset{compat=1.13}
@@ -57,8 +58,9 @@ Stress that with RSU we are getting the same blockage as with TOI, just surprise
 	Frame with Very Long Content. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more....\\
 \end{frame}
 
-\begin{frame}{\small{Frame with Very Long Title. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more.}}
-	content...
+\begin{frame}{\small{Frame with Very Long Title. Even Longer. Or Longer. More words. The quick brown fox jumps over the sleazy dog. Even more words. And more, more, more.\\And an image}}
+	\vfill
+	\insertimage{image30.png}
 \end{frame}
 
 \begin{frame}{Commands test}
@@ -93,8 +95,11 @@ Stress that with RSU we are getting the same blockage as with TOI, just surprise
 
 \subsection{Second First Subsection}
 
-\begin{frame}{Second Frame}
-	content...
+\begin{frame}[fragile]{Second Frame}
+	\lstset{language=SQL}
+	\begin{lstlisting}
+mysql> SELECT 1 FROM foo;
+	\end{lstlisting}
 \end{frame}
 
 \begin{frame}{Second Commands test}
