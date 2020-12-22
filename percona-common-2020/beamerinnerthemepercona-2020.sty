@@ -7,6 +7,10 @@
 \setbeamertemplate{itemize subitem}{\raisebox{0pt}{\scalebox{1.5}{\color{\percona_2020_defaultcolor}\hbox{\textbullet}}}}
 \setbeamertemplate{itemize subsubitem}{\raisebox{1pt}{\scalebox{0.5}{\color{\percona_2020_defaultcolor}$\blacksquare$}}}
 
+\setbeamertemplate{enumerate item}{\raisebox{-2pt}{\scalebox{1.5}{\color{\percona_2020_defaultcolor}\insertenumlabel}}}
+\setbeamertemplate{enumerate subitem}{\raisebox{0pt}{\scalebox{1.25}{\color{\percona_2020_defaultcolor}\insertenumlabel.\insertsubenumlabel}}}
+\setbeamertemplate{enumerate subsubitem}{\raisebox{0pt}{\scalebox{1}{\color{\percona_2020_defaultcolor}\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}}}
+
 \setbeamertemplate{section in toc}
 {\leavevmode{\raise0.5pt\hbox{\textcolor{percona-2020orange}\textbullet}}\inserttocsection\par}
 
