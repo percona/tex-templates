@@ -1,0 +1,34 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{frametitle}{pl-2022}[1][] {
+      \@tempdima=\textwidth%
+      \advance\@tempdima by\beamer@leftmargin%
+      \advance\@tempdima by\beamer@rightmargin%
+      \begin{beamercolorbox}[sep=0.08\paperheight,#1,wd=\the\@tempdima]{frametitle}
+          \usebeamerfont{frametitle}%
+          \strut\insertframetitle\par%
+      \end{beamercolorbox}%
+}
+
+\defbeamertemplate*{footline}{pl-2022}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0.8\paperwidth,0.910\paperheight)
+            {\includegraphics[width=0.12\paperwidth,keepaspectratio]{pl_logo_2022.png}}
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.05\paperwidth,0.924\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertframenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+
+\mode<all>
