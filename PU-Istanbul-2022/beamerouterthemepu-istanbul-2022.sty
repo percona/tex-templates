@@ -1,0 +1,49 @@
+\mode<presentation>
+
+\setbeamersize{text margin left=0cm}
+\defbeamertemplate*{frametitle}{percona-2020}[1][percona-2020orange] {
+    \begin{tikzpicture}[overlay, remember picture]
+        \begin{scope}[shift={(current page.north west)}]
+            \fill[percona-2020lightgray](0.958\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
+        \end{scope}
+    \end{tikzpicture}
+
+    \begin{textblock*}{\paperwidth}(0.0\paperwidth,0.09\paperheight)
+		{\includegraphics[height=0.79\paperheight,keepaspectratio]{image2.jpg}}
+    \end{textblock*}
+
+    \begin{textblock*}{\paperwidth}(0.05\paperwidth,-0.03\paperheight)
+	\begin{beamercolorbox}[sep=0.08\paperheight,left,wd=0.95\paperwidth]{frametitle}
+		\usebeamerfont{frametitle}\insertframetitle
+	\end{beamercolorbox}%
+    \end{textblock*}
+
+	\vspace{0.15\paperheight}
+}
+
+\defbeamertemplate*{footline}{percona-2020}[1][percona-2020orange] {
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0.03\paperwidth,0.941\paperheight)
+            \begin{beamercolorbox}{footnote}
+                %\usebeamerfont{framenumber}\insertframenumber%
+                \usebeamerfont{framenumber}\insertpagenumber%
+            \end{beamercolorbox}%
+        \end{textblock*}
+        %\vskip0.3in%
+
+        \begin{textblock*}{\paperwidth}(0.235\paperwidth,0.941\paperheight)
+            \begin{beamercolorbox}{copyright}
+                \usebeamerfont{copyright}\textcopyright\the\year~$|$ Percona
+            \end{beamercolorbox}%
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.525\paperwidth,0.9\paperheight)
+            {\includegraphics[height=0.08\paperheight,keepaspectratio]{image1.png}}
+        \end{textblock*}
+    \fi
+}
+
+\setbeamersize{text margin left=0.1\paperwidth,text margin right=0.093\paperwidth}
+
+\mode<all>

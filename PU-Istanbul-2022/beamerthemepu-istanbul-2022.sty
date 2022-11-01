@@ -1,0 +1,54 @@
+%This is 16x9 template
+%You need to include it as
+%\documentclass[aspectratio=169,<options>]{beamer}
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{pgfplots}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usetikzlibrary{positioning,calc}
+
+\usepackage[absolute,overlay]{textpos}
+
+\graphicspath{{../plmce-2016/plmce-2016_images/}, {./pu-istanbul-2022_images}}
+
+\setbeamersize{text margin left=18pt,mini frame offset=118cm}
+
+% Settings
+\DeclareOptionBeamer{titlepage}{\PassOptionsToPackage{titlepage=#1}{beamertheme-inner}}
+\ProcessOptionsBeamer
+
+\usefonttheme{plmce-2016}
+\usefonttheme{pu-istanbul-2022}
+\usecolortheme{percona}
+\usecolortheme{percona-2016}
+\usecolortheme{percona-2020}
+\usecolortheme{pu-istanbul-2022}
+\useinnertheme{pu-istanbul-2022}
+\useoutertheme{pu-istanbul-2022}
+
+\input{percona_common_commands}
+
+\setbeamertemplate{navigation symbols}{}
+
+%Custom commands
+%highlight item
+\renewcommand{\alert}[1]{\textbf{\textcolor{pu-2022bordo}{#1}}}
+
+% Insert full-frame image
+\renewcommand{\insertimage}[1]{%
+\includegraphics[height=0.72\paperheight,keepaspectratio]{#1}
+}
+
+
+\AtBeginSection{
+    \frame[plain]{\sectionpage}
+}
+\AtBeginSubsection{\frame[plain]{\subsectionpage}}
+
+\mode<all>
