@@ -12,7 +12,7 @@
 \setbeamertemplate{itemize subsubitem}[square]
 
 \setbeamertemplate{section in toc}
-{\leavevmode{\raise0.5pt\hbox{\textcolor{pl-2020titlegreen}\textbullet}}\inserttocsection\par}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{pu-2022bordo}\textbullet}}\inserttocsection\par}
 
 \setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
 \setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
@@ -51,11 +51,68 @@
 		\end{textblock*}
 	\fi
 
+	\ifx\insertinstitute\@empty%
     \begin{textblock*}{0.61\paperwidth}(0.4\paperwidth,0.63\paperheight)
     	\begin{beamercolorbox}{author}
             \usebeamerfont{author}\insertauthor\hfill\par%
     	\end{beamercolorbox}%
     \end{textblock*}
+	\else
+    \begin{textblock*}{0.61\paperwidth}(0.4\paperwidth,0.63\paperheight)
+    	\begin{beamercolorbox}{author}
+            \usebeamerfont{author}\insertauthor\hfill\par\usebeamerfont{author}\insertinstitute\par%
+    	\end{beamercolorbox}%
+    \end{textblock*}
+	\fi
+	
+}
+
+\defbeamertemplate*{section page}{pu-istanbul-2022} {
+    \begin{tikzpicture}[overlay, remember picture]
+        \begin{scope}[shift={(current page.north west)}]
+            \fill[percona-2020lightgray](0.958\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
+        \end{scope}
+    \end{tikzpicture}
+
+    \begin{textblock*}{\paperwidth}(0.0\paperwidth,0.09\paperheight)
+        {\includegraphics[height=0.79\paperheight,keepaspectratio]{image4.jpg}}
+    \end{textblock*}
+
+    \begin{textblock*}{0.6\paperwidth}(0.319\paperwidth,0.13\paperheight)
+			\vfill
+    	\begin{beamercolorbox}{section}
+			\begin{center}
+        	\usebeamerfont{section title}\insertsection
+			\end{center}
+    	\end{beamercolorbox}%
+			\vfill
+    \end{textblock*}
+
+    \vspace{0.15\paperheight}
+}
+
+\defbeamertemplate*{subsection page}{pu-istanbul-2022} {
+    \begin{tikzpicture}[overlay, remember picture]
+        \begin{scope}[shift={(current page.north west)}]
+            \fill[percona-2020lightgray](0.958\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
+        \end{scope}
+    \end{tikzpicture}
+
+    \begin{textblock*}{\paperwidth}(0.0\paperwidth,0.09\paperheight)
+        {\includegraphics[height=0.79\paperheight,keepaspectratio]{image4.jpg}}
+    \end{textblock*}
+
+    \begin{textblock*}{0.6\paperwidth}(0.319\paperwidth,0.13\paperheight)
+			\vfill
+    	\begin{beamercolorbox}{subsection}
+			\begin{center}
+        	\usebeamerfont{subsection title}\insertsubsection
+			\end{center}
+    	\end{beamercolorbox}%
+			\vfill
+    \end{textblock*}
+
+    \vspace{0.15\paperheight}
 }
 
 %change frame style
