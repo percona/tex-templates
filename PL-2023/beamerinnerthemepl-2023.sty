@@ -1,0 +1,87 @@
+\mode<presentation>
+
+\DeclareOptionBeamer{titlepage}{\def\beamer@titlepage{#1}}
+
+\setbeamertemplate{title page}{default}{}
+
+% Itemize items, plmce-2016
+\setbeamertemplate{items}[circle]
+
+\setbeamertemplate{itemize item}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\raise0.1pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subsubitem}[square]
+
+\setbeamertemplate{section in toc}
+{\leavevmode{\raise0.5pt\hbox{\textcolor{pl-2020titlegreen}\textbullet}}\inserttocsection\par}
+
+\setbeamertemplate{itemize/enumerate body begin}{\usebeamerfont{itemize item}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\usebeamerfont{itemize subitem}}
+
+% Title page
+%\setbeamercolor{background canvas}{bg=white}
+\defbeamertemplate*{title page}{pl-2023}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0\paperheight)
+		{\includegraphics[height=1\paperheight,keepaspectratio]{image17.jpg}}
+	\end{textblock*}
+
+	\ifx\insertsubtitle\@empty%
+	    \begin{textblock*}{0.51\paperwidth}(0.390\paperwidth,0.43\paperheight)
+	            \begin{beamercolorbox}{title page header}
+	                    \usebeamerfont{title}\inserttitle\hfill%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+	\else
+		\begin{textblock*}{0.51\paperwidth}(0.390\paperwidth,0.43\paperheight)
+			\begin{beamercolorbox}{title page header}
+				\usebeamerfont{subtitle}{\textbf\inserttitle}\hfill\par\usebeamerfont{subtitle}\insertsubtitle\hfill%
+			\end{beamercolorbox}%
+		\end{textblock*}
+	\fi
+
+    \begin{textblock*}{0.61\paperwidth}(0.394\paperwidth,0.69\paperheight)
+    	\begin{beamercolorbox}{author}
+            \usebeamerfont{author}\insertauthor\hfill\par\usebeamerfont{author}\insertinstitute\par%
+    	\end{beamercolorbox}%
+    \end{textblock*}
+}
+
+% Section page
+\defbeamertemplate*{section page}{pl-2023}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0\paperheight)
+		{\includegraphics[height=1\paperheight,keepaspectratio]{image19.jpg}}
+	\end{textblock*}
+
+	    \begin{textblock*}{0.51\paperwidth}(0.28\paperwidth,0.59\paperheight)
+	            \begin{beamercolorbox}{section}
+	                    \usebeamerfont{section title}\insertsection\hfill%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+}
+
+% Subsection page
+\defbeamertemplate*{subsection page}{pl-2023}[1][]
+{
+	\begin{textblock*}{\paperwidth}(0\paperwidth,0\paperheight)
+		{\includegraphics[height=1\paperheight,keepaspectratio]{image7.png}}
+	\end{textblock*}
+
+	    \begin{textblock*}{0.51\paperwidth}(0.167\paperwidth,0.46\paperheight)
+	            \begin{beamercolorbox}{subsection}
+	                    \usebeamerfont{subsection title}\insertsubsection\hfill%
+	            \end{beamercolorbox}%
+	    \end{textblock*}
+}
+
+%change frame style
+%see /usr/share/texmf/tex/latex/beamer/beamerbaseframe.sty for example
+\define@key{beamerframe}{c}[true]{% centered
+	\beamer@frametopskip=0.12\paperheight plus 1fill\relax%
+	\beamer@framebottomskip=0.5cm plus 1.5fill\relax%
+%	\beamer@frametopskipautobreak=0pt plus .4\paperheight\relax%
+%	\beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
+%	\def\beamer@initfirstlineunskip{}%
+}
+
+\mode<all>

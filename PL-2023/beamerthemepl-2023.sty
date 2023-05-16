@@ -1,0 +1,100 @@
+%This is 16x9 template
+%You need to include it as
+%\documentclass[aspectratio=169,<options>]{beamer}
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{pgfplots}
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usetikzlibrary{positioning,calc}
+
+\usepackage[absolute,overlay]{textpos}
+
+\graphicspath{{../plmce-2016/plmce-2016_images/}, {./pl-2023_images}}
+
+\setbeamersize{text margin left=18pt,mini frame offset=118cm}
+
+% Settings
+\DeclareOptionBeamer{titlepage}{\PassOptionsToPackage{titlepage=#1}{beamertheme-inner}}
+\ProcessOptionsBeamer
+
+\usefonttheme{plmce-2016}
+\usefonttheme{pl-2023}
+\usecolortheme{percona}
+\usecolortheme{percona-2016}
+\usecolortheme{percona-2020}
+\usecolortheme{pl-2023}
+\useinnertheme{pl-2023}
+\useoutertheme{pl-2023}
+
+\input{percona_common_commands}
+
+\setbeamertemplate{navigation symbols}{}
+
+%Custom commands
+%highlight item
+\renewcommand{\alert}[1]{\textbf{\textcolor{pl-2023alert}{#1}}}
+
+% Insert full-frame image
+\renewcommand{\insertimage}[1]{%
+\includegraphics[height=0.72\paperheight,keepaspectratio]{#1}
+}
+
+% Change default color everywhere
+\renewcommand{\changedefaultcolor}[1]{%
+%	\def\percona_2020_defaultcolor{#1}%
+    \setbeamertemplate{frametitle}[pl-2023][#1]%
+}
+
+\renewcommand{\resetdefaultcolor}{\changedefaultcolor{pl-2023alert}}
+
+\makeatletter
+\def\verbatim@font{\small\fontfamily{pcr}\color{pl-2023gray}}
+\makeatother
+
+\AtBeginSection{
+    \frame[plain]{\sectionpage}
+}
+\AtBeginSubsection{\frame[plain]{\subsectionpage}}
+
+\def\GitHub{}
+\def\Twitter{}
+\def\SlideShare{}
+\def\In{}
+\newcommand{\tyslide}{
+	%\usebackgroundtemplate{
+	%	\includegraphics[width=\paperwidth,keepaspectratio]{plam2019-bg.png}
+	%}
+
+	\begin{frame}[plain]
+	
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+        \tikz[remember picture,overlay] {%
+            \draw[fill=pl-2023alert] (0\paperwidth,-\paperheight) rectangle (\paperwidth,\paperheight);
+        }
+    \end{textblock*}
+
+    \begin{textblock*}{0.4\paperwidth}(0.40\paperwidth,0.41\paperheight)
+        \usebeamerfont{subsection title}\usebeamercolor[fg]{section title}{Thank you!}
+    \end{textblock*}
+	
+    \begin{textblock*}{0.47\paperwidth}(0.41\paperwidth,0.68\paperheight)
+		\usebeamerfont{author}\In\hfill\GitHub\par\Twitter\hfill\SlideShare\par%
+    \end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0.08\paperwidth,0.255\paperheight)
+        {\includegraphics[width=0.210\paperwidth,keepaspectratio]{image2.png}}
+    \end{textblock*}
+
+
+	\end{frame}
+
+	\usebackgroundtemplate{}
+}
+
+\mode<all>

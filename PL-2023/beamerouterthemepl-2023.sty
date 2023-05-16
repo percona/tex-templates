@@ -1,0 +1,45 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{frametitle}{pl-2023}[1][pl-2023alert] {
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+		\tikz[remember picture,overlay] {%
+			\fill[#1](0\paperwidth,-1\paperheight) rectangle (0.02\paperwidth,0\paperheight);
+		}
+    \end{textblock*}
+
+	\begin{textblock*}{0.98\paperwidth}(0.04\paperwidth,0.04\paperheight)
+		\begin{beamercolorbox}[left, wd=0.98\paperwidth]{frametitle}
+			\usebeamerfont{title in head/foot}\insertframetitle
+		\end{beamercolorbox}%
+	\end{textblock*}
+}
+
+\defbeamertemplate*{footline}{pl-2023}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0.845\paperwidth,0.950\paperheight)
+            {\includegraphics[width=0.10\paperwidth,keepaspectratio]{image18.png}}
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.98\paperwidth,0.970\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertpagenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.050\paperwidth,0.960\paperheight)
+            \begin{beamercolorbox}{copyright}
+                \usebeamerfont{copyright}\textcopyright~Copyright \the\year~Percona \textregistered~LLC. All rights reserved
+            \end{beamercolorbox}%
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+\setbeamersize{text margin left=0.1\paperwidth,text margin right=0.093\paperwidth}
+
+\mode<all>
