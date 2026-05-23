@@ -1,0 +1,53 @@
+\input{percona_common_commands}
+
+\renewcommand{\alert}[1]{\textbf{\textcolor{\percona_2026_defaultcolor}{#1}}}
+
+% Change default color everywhere
+\renewcommand{\changedefaultcolor}[1]{%
+	\def\percona_2026_defaultcolor{#1}%
+    \setbeamertemplate{title page}[percona-2026][#1]%
+    \setbeamertemplate{section page}[percona-2026][#1]%
+    \setbeamertemplate{subsection page}[percona-2026][#1]%
+    \setbeamertemplate{frametitle}[percona-2026][#1]%
+    \setbeamertemplate{footline}[percona-2026][#1]%
+}
+
+\renewcommand{\resetdefaultcolor}{\changedefaultcolor{percona-2026blue}}
+
+\newcommand{\ttf}[1]{{\ttfamily\color{\percona_2026_defaultcolor}#1}}
+
+% Re-define in your *.tex file to put links to your personal accounts
+\def\GitHub{\includegraphics[height=0.05\paperheight]{GitHub-Mark-64px_white.png}/\textbf{percona}}
+\def\Twitter{\includegraphics[height=0.05\paperheight]{Logo blue.png}/\textbf{percona}}
+\def\SlideShare{}
+\def\In{\includegraphics[height=0.05\paperheight]{In_alpha.png}/\textbf{company/percona}}
+
+\newcommand{\tyslide}{
+	\usebackgroundtemplate{
+		\includegraphics[width=\paperwidth,keepaspectratio]{ty_bg.jpg}
+	}
+
+    \setbeamertemplate{footline}{}
+
+	\begin{frame}[plain]
+	
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+		\tikz[remember picture,overlay] {%
+            \draw[fill=\percona_2026_defaultcolor,\percona_2026_defaultcolor] (0.922\paperwidth,0\paperheight) -- (1\paperwidth,0\paperheight) -- (\paperwidth,-0.245\paperheight) -- cycle;
+		}
+    \end{textblock*}
+
+    \begin{textblock*}{0.47\paperwidth}(0.271\paperwidth,0.48\paperheight)
+        \begin{beamercolorbox}{ty}
+		    \usebeamerfont{ty}\In\hfill\GitHub\hfill\Twitter\hfill\SlideShare\par%
+        \end{beamercolorbox}
+    \end{textblock*}
+
+	\begin{textblock*}{\paperwidth}(0.271\paperwidth,0.27\paperheight)
+        {\includegraphics[width=0.47\paperwidth,keepaspectratio]{percona_one_color_light.png}}
+    \end{textblock*}
+
+	\end{frame}
+
+	\usebackgroundtemplate{}
+}

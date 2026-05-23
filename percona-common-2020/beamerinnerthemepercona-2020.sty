@@ -19,11 +19,11 @@
 
 % Title Page
 % width - 13.35, height - 7.5
-\defbeamertemplate*{title page}{percona-2020}
+\defbeamertemplate*{title page}{percona-2020}[1][percona-2020orange]
 {
     \begin{tikzpicture}[overlay, remember picture]
       \begin{scope}[shift={(current page.north west)}] 
-        \fill[percona-2020orange](0\paperwidth,-0.113\paperheight) rectangle (0.749\paperwidth,-0.887\paperheight);
+        \fill[#1](0\paperwidth,-0.113\paperheight) rectangle (0.749\paperwidth,-0.887\paperheight);
         \fill[percona-2020lightgray](0.76\paperwidth,-0.113\paperheight) rectangle (\paperwidth,-0.887\paperheight);
       \end{scope}
     \end{tikzpicture}

@@ -1,0 +1,51 @@
+\mode<presentation>
+
+
+% Frame title
+\defbeamertemplate*{frametitle}{percona-2026}[1][percona-2026blue] {
+	\begin{textblock*}{\paperwidth}(0pt,0pt)
+		\tikz[remember picture,overlay] {%
+            \draw[fill=#1,#1] (0.922\paperwidth,0\paperheight) -- (1\paperwidth,0\paperheight) -- (\paperwidth,-0.245\paperheight) -- cycle;
+		}
+    \end{textblock*}
+
+	\begin{textblock*}{0.98\paperwidth}(0.040\paperwidth,0.12\paperheight)
+		\begin{beamercolorbox}[left, wd=0.98\paperwidth]{frametitle}
+			\usebeamerfont{title in head/foot}\insertframetitle
+		\end{beamercolorbox}%
+	\end{textblock*}
+}
+
+\defbeamertemplate*{footline}{percona-2026}[1][] {
+
+    \ifnum \insertpagenumber=1
+    \else
+        \begin{textblock*}{\paperwidth}(0.790\paperwidth,0.87\paperheight)
+            {\includegraphics[width=0.18\paperwidth,keepaspectratio]{percona_one_color_dark.png}}
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0pt,0pt)
+          \tikz[remember picture,overlay] {%
+            \draw[percona-2026tint4,densely dashed] (0.041\paperwidth,-0.915\paperheight) rectangle (0.071\paperwidth,-0.935\paperheight);
+          }
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.042\paperwidth,0.915\paperheight)
+                \begin{beamercolorbox}{framenumber}
+                        \usebeamerfont{framenumber}\insertpagenumber%
+                \end{beamercolorbox}%
+        \end{textblock*}
+
+        \begin{textblock*}{\paperwidth}(0.85\paperwidth,0.95\paperheight)
+            \begin{beamercolorbox}{copyright}
+                \usebeamerfont{copyright}\textcopyright~\the\year~Percona
+            \end{beamercolorbox}%
+        \end{textblock*}
+
+        \vskip0.3in%
+    \fi
+}
+
+%\setbeamersize{text margin left=0.02\paperwidth,text margin right=0.093\paperwidth}
+
+\mode<all>
